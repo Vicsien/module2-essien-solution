@@ -1,0 +1,71 @@
+/* Resetting default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #f2f2f2;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.section {
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    border: 1px solid #000;
+}
+
+.title {
+    position: relative;
+    text-align: right;
+    padding: 5px;
+    background-color: #ddd;
+    border-bottom: 1px solid #000;
+}
+
+.title::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -5px;
+    border-top: 5px solid transparent;
+    border-right: 5px solid #ddd;
+}
+
+.title::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid #ddd;
+}
+
+@media (max-width: 991px) {
+    .section {
+        width: calc(50% - 20px);
+    }
+
+    .section:nth-child(3) {
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .section {
+        width: 100%;
+    }
+}
